@@ -60,7 +60,7 @@ http://example.com/book_service/api
 
 #### Response 
 
-[Array<Book>](#book)
+[Array(Book)](#book)
 
 ### `GET /books/{id}` (GetBook) 
 
@@ -90,7 +90,7 @@ http://example.com/book_service/api
 
 #### Response 
 
-[Array<Book>](#book)
+[Array(Book)](#book)
 
 ## Entity
 
