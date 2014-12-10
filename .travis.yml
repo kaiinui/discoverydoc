@@ -4,4 +4,4 @@ rvm:
 
 before_script: bundle install
 
-script: rspec
+script: bundle exec rspec
