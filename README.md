@@ -1,6 +1,8 @@
 discoverydoc
 ============
 
+[![Gem Version](https://badge.fury.io/rb/discoverydoc.svg)](http://badge.fury.io/rb/discoverydoc) [![Build Status](https://travis-ci.org/kaiinui/discoverydoc.svg?branch=feature%2Ftravis)](https://travis-ci.org/kaiinui/discoverydoc) 
+
 Generate markdown document from discovery file.
 
 From following YAML Dicovery file,

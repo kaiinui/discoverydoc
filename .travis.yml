@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+ - 2.0.0-p481
+
+before_script: bundle install
+
+script: bundle exec rspec
