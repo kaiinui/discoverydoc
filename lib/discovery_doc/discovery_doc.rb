@@ -135,7 +135,7 @@ module DiscoveryDoc
       if entity.is_a?(String)
         "[#{entity}](##{entity.downcase})"
       elsif entity.is_a?(Array)
-        "[Array<#{entity[0]}>](##{entity[0].downcase})"
+        "[Array(#{entity[0]})](##{entity[0].downcase})"
       end
     end
 
