@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+
+require_relative '../lib/discovery_doc/discovery_doc'
+
+filepath = ARGV[0]
+builder = DiscoveryDoc::DocBuilder.new
+puts builder.from_file filepath

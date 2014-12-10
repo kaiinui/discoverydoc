@@ -1,0 +1,100 @@
+service:
+  name: FilmAPI
+  id: net.filmapp.api
+  base_url: https://filmappapi.appspot.com
+
+endpoint:
+  ### Deltas API ###
+  GetDeltas:
+    path: GET /deltas
+    params:
+      ust: Integer
+      device_token: String
+    response: DeltaPack
+  PostDeltas:
+    path: POST /deltas
+    body: DeltaPack
+    response:
+      id: String
+      message: String
+
+  ### Photo Upload API ###
+  UploadPhoto:
+    path: POST /upload/photos/{gid}
+    content_type: multipart/form-data
+    params:
+      image: Image
+    response: PhotoUploadResponse
+
+  ### Entity API ###
+  GetPhoto:
+    path: GET /photos/{gid}
+    response: Photo
+  GetMultiplePhotos:
+    path: GET /photos/{comma_separated_gids}
+    response: [Photo]
+  GetAlbum:
+    path: GET /albums/{gid}
+    response: Album
+
+entity:
+  DeltaPack:
+    _id: String
+    _ust: Integer
+    Photo: [Photo]
+    Album: [Album]
+  Photo:
+    gid: Key
+    localIdentifier: String
+    assetURL: String
+    albumIdentifier: String
+    burstIdentifier: String
+    collectionIdentifier: String
+    mediaType: Integer
+    mediaSubType: Integer
+    pixelWidth: Integer
+    pixelHeight: Integer
+    duration: Integer
+    latitude: Double
+    longitude: Double
+    hasUploaded: Boolean
+    remoteImageURL: String
+    aq_gid: String
+    aq_deviceToken: String
+    aq_localTimestamp: Long
+    aq_idDeleted: Boolean
+    aq_ust: Long
+    creationTimestamp: Long
+    modificationTimestamp: Long
+  Album:
+    gid: Key
+    assetsGroupURL: String
+    localIdentifier: String
+    headerPhotoIdentifier: String
+    title: String
+    tintColorHex: String
+    backgroundColorHex: String
+    themeColorHex: String
+    layoutThemeIdentifier: String
+    themeIdentifier: String
+    aq_gid: String
+    aq_deviceToken: String
+    aq_localTimestamp: Long
+    aq_idDeleted: Boolean
+    aq_ust: Long
+    latestPhotoCreationTimestamp: Long
+    creationTimestamp: Long
+    modificationTimestamp: Long
+  User:
+    userToken: String
+    secretKey: String
+  Device:
+    deviceToken: String
+    secretKey: String
+  PhotoUploadResponse:
+    id: String
+    image_url: String
+
+error:
+  id: String
+  message: String
